@@ -8,12 +8,17 @@ export function Footer() {
             RayVPN Routers
           </div>
           
-          <div className="flex items-center gap-6 text-sm text-muted-foreground font-mono">
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground font-mono">
             <a href="https://cabinet.raypn.online" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">
               cabinet.raypn.online
             </a>
             <a href="https://t.me/r4yvpn_bot" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">
               @r4yvpn_bot
+            </a>
+            <span className="text-white/30 hidden sm:inline">·</span>
+            <span className="text-muted-foreground/70">Вопросы:</span>
+            <a href="https://t.me/rayloyal" target="_blank" rel="noreferrer" className="text-primary hover:underline transition-colors">
+              @rayloyal
             </a>
           </div>
         </div>
