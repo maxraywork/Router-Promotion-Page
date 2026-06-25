@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Smartphone, MousePointerClick } from "lucide-react";
+import { ShieldCheck, Smartphone, MousePointerClick, Globe, Wifi } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 export function Advantages() {
@@ -21,13 +21,10 @@ export function Advantages() {
       <div className="container px-4 mx-auto">
         <div className="max-w-3xl mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Почему мы лучше.</h2>
-          <p className="text-xl text-muted-foreground font-light">
-            Не дороже и не громче — просто честнее. Чистая прошивка, ваш контроль, реальная работающая система.
-          </p>
         </div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           variants={container}
           initial="hidden"
           whileInView="show"
@@ -43,14 +40,14 @@ export function Advantages() {
               </div>
               <h3 className="text-xl font-semibold mb-4 text-white">Чистая прошивка, ваш контроль</h3>
               <p className="text-muted-foreground leading-relaxed">
-                OpenWrt без модификаций. Роутер принадлежит вам и управляется вами — не нами. Если вы решите уйти, роутер останется рабочим и вы поставите любой другой VPN. Мы не держим вас в заложниках.
+                OpenWrt без модификаций. Роутер принадлежит вам и управляется только вами. Если что-то случится с нашим сервисом — роутер останется полностью рабочим и не превратится в кирпич. Вы в любой момент можете настроить его под себя или поставить любой другой VPN.
               </p>
             </Card>
           </motion.div>
 
           <motion.div variants={item}>
             <Card
-              className="h-full bg-white/5 border-white/10 p-8 hover:border-primary/50 transition-colors duration-300 relative overflow-hidden"
+              className="h-full bg-white/5 border-white/10 p-8 hover:border-primary/50 transition-colors duration-300 relative overflow-hidden border-primary/30"
               data-testid="card-advantage-app"
             >
               <div className="absolute top-0 right-0 p-4 opacity-10">
@@ -59,10 +56,15 @@ export function Advantages() {
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6 relative z-10">
                 <Smartphone className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-white relative z-10">Приложение iOS и Android</h3>
-              <p className="text-muted-foreground leading-relaxed relative z-10">
-                Настройка, мониторинг и удалённое управление роутером прямо со смартфона. Видите, что происходит в вашей сети — в любое время, из любого места.
-              </p>
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-primary/15 text-primary text-xs font-mono uppercase tracking-wider mb-3">
+                  Уникальная функция
+                </div>
+                <h3 className="text-xl font-semibold mb-4 text-white">Удалённое управление роутером</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Приложение для iOS и Android позволяет управлять роутером удалённо — из любой точки мира. В стандартном OpenWrt и других прошивках такого нет. Вы видите статус сети, подключённые устройства и состояние VPN прямо со смартфона — без доступа к домашней сети.
+                </p>
+              </div>
             </Card>
           </motion.div>
 
@@ -72,14 +74,30 @@ export function Advantages() {
               data-testid="card-advantage-vpn"
             >
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6">
-                <MousePointerClick className="w-6 h-6" />
+                <Globe className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-white">VPN в один клик</h3>
+              <h3 className="text-xl font-semibold mb-4 text-white">VPN-туннель для всей сети</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Туннелированный VPN через приложение — без терминалов, конфигов и технического погружения. Нажали кнопку — работает. Для всех устройств в вашей сети сразу.
+                VPN работает на уровне роутера — значит все устройства в вашей Wi-Fi сети защищены автоматически: телефоны, ноутбуки, телевизоры, умные колонки. Российские сервисы (Яндекс, ВКонтакте, Сбер) и зарубежные работают одновременно, без ручных переключений.
               </p>
             </Card>
           </motion.div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-8 p-6 rounded-xl bg-white/3 border border-white/8 flex flex-col md:flex-row items-start md:items-center gap-4"
+        >
+          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+            <Wifi className="w-5 h-5" />
+          </div>
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            <span className="text-white font-medium">Что такое VPN-туннелирование?</span>{" "}
+            Весь интернет-трафик с вашего роутера идёт через зашифрованный канал на наш сервер и выходит оттуда. Для российских сайтов — соединение выглядит как обычное. Для заблокированных — соединение приходит с другого IP. Итог: открыто всё, работает быстро, на каждом устройстве в доме без дополнительных приложений.
+          </p>
         </motion.div>
       </div>
     </section>

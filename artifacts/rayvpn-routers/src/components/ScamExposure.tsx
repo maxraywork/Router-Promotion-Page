@@ -91,7 +91,7 @@ export function ScamExposure() {
                   <li className="flex items-start gap-3">
                     <span className="text-primary mt-1 font-bold">✓</span>
                     <span className="text-muted-foreground">
-                      Даже если мы закроемся — роутер продолжит работать. OpenWrt остаётся, и вы сможете установить любой другой VPN самостоятельно.
+                      Роутер под вашим контролем при любом сценарии — он не превратится в кирпич. OpenWrt остаётся вашим, и вы всегда сможете установить любой другой VPN самостоятельно.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">

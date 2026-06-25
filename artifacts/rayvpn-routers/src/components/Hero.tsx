@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap } from "lucide-react";
 import logoSvg from "@assets/logo_1782390876037.svg";
-import { RouterSvg } from "@/components/RouterSvg";
+import routerImg from "@assets/image_1782392233503.png";
 
 export function Hero() {
   return (
@@ -78,13 +78,12 @@ export function Hero() {
                 className="w-48 h-48 md:w-64 md:h-64 drop-shadow-[0_0_40px_rgba(220,44,44,0.3)]"
                 data-testid="img-logo"
               />
-              <RouterSvg
-                className="w-64 md:w-80 drop-shadow-[0_0_30px_rgba(220,44,44,0.2)]"
+              <img
+                src={routerImg}
+                alt="Xiaomi AX 3000T на OpenWrt"
+                className="w-64 md:w-80 object-contain drop-shadow-[0_0_40px_rgba(220,44,44,0.15)]"
                 data-testid="img-router-hero"
               />
-              <p className="text-xs font-mono text-muted-foreground/60 uppercase tracking-wider">
-                Xiaomi AX 3000T на OpenWrt
-              </p>
             </motion.div>
           </div>
         </div>
