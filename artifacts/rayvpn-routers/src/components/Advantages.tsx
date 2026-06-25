@@ -57,8 +57,13 @@ export function Advantages() {
                 <Smartphone className="w-6 h-6" />
               </div>
               <div className="relative z-10">
-                <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-primary/15 text-primary text-xs font-mono uppercase tracking-wider mb-3">
-                  Уникальная функция
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-primary/15 text-primary text-xs font-mono uppercase tracking-wider">
+                    Уникальная функция
+                  </div>
+                  <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-yellow-500/15 text-yellow-400 text-xs font-mono uppercase tracking-wider">
+                    Alpha
+                  </div>
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-white">Удалённое управление роутером</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -96,7 +101,7 @@ export function Advantages() {
           </div>
           <p className="text-muted-foreground text-sm leading-relaxed">
             <span className="text-white font-medium">Что такое VPN-туннелирование?</span>{" "}
-            Весь интернет-трафик с вашего роутера идёт через зашифрованный канал на наш сервер и выходит оттуда. Для российских сайтов — соединение выглядит как обычное. Для заблокированных — соединение приходит с другого IP. Итог: открыто всё, работает быстро, на каждом устройстве в доме без дополнительных приложений.
+            Роутер сам решает по домену, куда направить трафик. Яндекс, ВКонтакте, Сбербанк — идут напрямую через провайдера, как обычно. Instagram, YouTube, заблокированные сервисы — автоматически уходят через VPN-туннель. Переключать ничего не нужно: всё работает одновременно, на каждом устройстве в вашей Wi-Fi сети.
           </p>
         </motion.div>
       </div>

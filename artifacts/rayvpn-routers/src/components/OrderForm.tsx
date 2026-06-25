@@ -104,7 +104,7 @@ export function OrderForm() {
               </form>
             </Form>
 
-            <div className="mt-8 pt-8 border-t border-white/10 text-center">
+            <div className="hidden mt-8 pt-8 border-t border-white/10 text-center">
               <p className="text-sm text-muted-foreground mb-4">Или купите быстро через Авито</p>
               <Button
                 variant="outline"

@@ -48,7 +48,7 @@ export function Hero() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="w-full sm:w-auto h-14 px-8 text-base border-white/10 hover:bg-white/5 font-semibold"
+                    className="hidden w-full sm:w-auto h-14 px-8 text-base border-white/10 hover:bg-white/5 font-semibold"
                     asChild
                   >
                     <a
