@@ -62,7 +62,7 @@ export function Advantages() {
                     Уникальная функция
                   </div>
                   <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-yellow-500/15 text-yellow-400 text-xs font-mono uppercase tracking-wider">
-                    Alpha
+                    Скоро
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-white">Удалённое управление роутером</h3>
