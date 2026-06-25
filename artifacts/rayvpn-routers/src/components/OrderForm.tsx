@@ -15,7 +15,7 @@ const formSchema = z.object({
 
 export function OrderForm() {
   const { toast } = useToast();
-  
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -24,8 +24,7 @@ export function OrderForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log("Order submitted:", values);
+  function onSubmit(_values: z.infer<typeof formSchema>) {
     toast({
       title: "Спасибо!",
       description: "Мы свяжемся с вами скоро.",
@@ -37,7 +36,7 @@ export function OrderForm() {
   return (
     <section id="order" className="py-24 md:py-32 relative overflow-hidden border-b border-white/5">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl -z-10" />
-      
+
       <div className="container px-4 mx-auto relative z-10">
         <div className="max-w-xl mx-auto">
           <motion.div
@@ -64,13 +63,18 @@ export function OrderForm() {
                     <FormItem>
                       <FormLabel className="text-white">Ваше имя</FormLabel>
                       <FormControl>
-                        <Input placeholder="Иван" className="bg-background/50 border-white/10 h-12" {...field} />
+                        <Input
+                          placeholder="Иван"
+                          className="bg-background/50 border-white/10 h-12"
+                          data-testid="input-name"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="contact"
@@ -78,23 +82,41 @@ export function OrderForm() {
                     <FormItem>
                       <FormLabel className="text-white">Телефон или Telegram</FormLabel>
                       <FormControl>
-                        <Input placeholder="@username или +7..." className="bg-background/50 border-white/10 h-12" {...field} />
+                        <Input
+                          placeholder="@username или +7..."
+                          className="bg-background/50 border-white/10 h-12"
+                          data-testid="input-contact"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
 
-                <Button type="submit" className="w-full h-14 text-base font-semibold">
+                <Button
+                  type="submit"
+                  className="w-full h-14 text-base font-semibold"
+                  data-testid="button-submit-order"
+                >
                   Отправить заявку
                 </Button>
               </form>
             </Form>
 
             <div className="mt-8 pt-8 border-t border-white/10 text-center">
-              <p className="text-sm text-muted-foreground mb-4">Или закажите безопасно через Авито</p>
-              <Button variant="outline" className="w-full h-12 border-white/10 hover:bg-white/5" asChild>
-                <a href="https://avito.ru" target="_blank" rel="noreferrer">
+              <p className="text-sm text-muted-foreground mb-4">Или купите быстро через Авито</p>
+              <Button
+                variant="outline"
+                className="w-full h-12 border-white/10 hover:bg-white/5"
+                asChild
+              >
+                <a
+                  href="https://avito.ru"
+                  target="_blank"
+                  rel="noreferrer"
+                  data-testid="link-avito-form"
+                >
                   Перейти на Авито
                 </a>
               </Button>

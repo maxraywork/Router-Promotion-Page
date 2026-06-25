@@ -116,19 +116,19 @@
   --sidebar: 220 50% 8%;
   --sidebar-foreground: 210 40% 98%;
   --sidebar-border: 217 32% 17%;
-  --sidebar-primary: 190 90% 50%;
-  --sidebar-primary-foreground: 220 50% 6%;
+  --sidebar-primary: 0 71% 52%;
+  --sidebar-primary-foreground: 0 0% 100%;
   --sidebar-accent: 217 32% 17%;
   --sidebar-accent-foreground: 210 40% 98%;
-  --sidebar-ring: 190 90% 50%;
+  --sidebar-ring: 0 71% 52%;
 
   --popover: 220 50% 8%;
   --popover-foreground: 210 40% 98%;
   --popover-border: 217 32% 17%;
 
-  /* Cyan Accent */
-  --primary: 190 90% 50%;
-  --primary-foreground: 220 50% 6%;
+  /* Red Accent — matches RayVPN logo #DC2C2C */
+  --primary: 0 71% 52%;
+  --primary-foreground: 0 0% 100%;
 
   --secondary: 217 32% 17%;
   --secondary-foreground: 210 40% 98%;
@@ -143,13 +143,13 @@
   --destructive-foreground: 210 40% 98%;
 
   --input: 217 32% 17%;
-  --ring: 190 90% 50%;
+  --ring: 0 71% 52%;
   
-  --chart-1: 190 90% 50%;
-  --chart-2: 210 90% 50%;
-  --chart-3: 170 90% 50%;
-  --chart-4: 250 90% 50%;
-  --chart-5: 230 90% 50%;
+  --chart-1: 0 71% 52%;
+  --chart-2: 0 55% 38%;
+  --chart-3: 10 80% 55%;
+  --chart-4: 350 65% 48%;
+  --chart-5: 20 70% 50%;
 
   --app-font-sans: 'Inter', sans-serif;
   --app-font-serif: Georgia, serif;
