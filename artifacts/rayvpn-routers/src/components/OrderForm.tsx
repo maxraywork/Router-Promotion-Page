@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -6,31 +7,76 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, Loader2 } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Имя должно содержать минимум 2 символа." }),
   contact: z.string().min(5, { message: "Укажите корректный телефон или Telegram." }),
 });
 
+const BOT_TOKEN = import.meta.env.VITE_TG_BOT_TOKEN as string;
+const CHAT_ID = import.meta.env.VITE_TG_CHAT_ID as string;
+const THREAD_ID = import.meta.env.VITE_TG_THREAD_ID as string;
+
+async function sendToTelegram(name: string, contact: string): Promise<void> {
+  const text =
+    `🔔 *Новая заявка с сайта RayVPN Routers*\n\n` +
+    `👤 Имя: ${name}\n` +
+    `📱 Контакт: ${contact}`;
+
+  const params: Record<string, string> = {
+    chat_id: CHAT_ID,
+    text,
+    parse_mode: "Markdown",
+  };
+  if (THREAD_ID) {
+    params.message_thread_id = THREAD_ID;
+  }
+
+  const res = await fetch(
+    `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(params),
+    }
+  );
+
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error((err as { description?: string }).description ?? "Telegram API error");
+  }
+}
+
 export function OrderForm() {
   const { toast } = useToast();
+  const [sending, setSending] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      contact: "",
-    },
+    defaultValues: { name: "", contact: "" },
   });
 
-  function onSubmit(_values: z.infer<typeof formSchema>) {
-    toast({
-      title: "Спасибо!",
-      description: "Мы свяжемся с вами скоро.",
-      duration: 5000,
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setSending(true);
+    try {
+      await sendToTelegram(values.name, values.contact);
+      toast({
+        title: "Спасибо!",
+        description: "Мы свяжемся с вами скоро.",
+        duration: 5000,
+      });
+      form.reset();
+    } catch {
+      toast({
+        title: "Ошибка отправки",
+        description: "Попробуйте ещё раз или напишите нам напрямую в Telegram.",
+        variant: "destructive",
+        duration: 6000,
+      });
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -97,9 +143,17 @@ export function OrderForm() {
                 <Button
                   type="submit"
                   className="w-full h-14 text-base font-semibold"
+                  disabled={sending}
                   data-testid="button-submit-order"
                 >
-                  Отправить заявку
+                  {sending ? (
+                    <span className="flex items-center gap-2">
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      Отправляем...
+                    </span>
+                  ) : (
+                    "Отправить заявку"
+                  )}
                 </Button>
               </form>
             </Form>
