@@ -1,0 +1,13 @@
+services:
+  rayvpn-routers:
+    build: .
+    container_name: rayvpn-routers
+    restart: unless-stopped
+    ports:
+      - "3080:80"
+    environment:
+      - NODE_ENV=production
+      - PORT=8080
+      - TG_BOT_TOKEN=${TG_BOT_TOKEN}
+      - TG_CHAT_ID=${TG_CHAT_ID}
+      - TG_THREAD_ID=${TG_THREAD_ID}

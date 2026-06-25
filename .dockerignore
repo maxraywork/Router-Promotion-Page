@@ -1,0 +1,12 @@
+node_modules
+.git
+.DS_Store
+.env
+.env.*
+.replit
+.replitignore
+.replit-artifact
+replit.md
+.local
+.agents
+*.tsbuildinfo
