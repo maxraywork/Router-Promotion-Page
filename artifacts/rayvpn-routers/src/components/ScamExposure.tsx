@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { AlertTriangle, CheckCircle2, XCircle } from "lucide-react";
+import { AlertTriangle, CheckCircle2, XCircle, ExternalLink } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 export function ScamExposure() {
@@ -104,6 +104,40 @@ export function ScamExposure() {
               </Card>
             </motion.div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-12 p-6 md:p-8 rounded-2xl bg-white/3 border border-white/8"
+          >
+            <div className="flex flex-col md:flex-row items-start gap-6">
+              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-destructive/10 flex items-center justify-center text-primary">
+                <ExternalLink className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="text-lg font-bold text-white mb-3">
+                  Независимое расследование подтверждает
+                </h4>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Один человек просто взял и купил три роутера с «вечным VPN» на маркетплейсах — и{" "}
+                  <a
+                    href="https://habr.com/ru/companies/bastion/articles/917522/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    проверил, что внутри
+                  </a>
+                  . Результат: дешёвые серверы, пароли admin:admin, десятки чужих роутеров в одной незащищённой сети, и встроенный удалённый доступ продавца к вашему устройству. Это не наша статья — это стороннее независимое исследование.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Качественный VPN-сервис требует надёжной инфраструктуры, поддержки и постоянного обслуживания — и это неизбежно стоит денег. Когда кто-то предлагает «бесплатно и навсегда», стоит задуматься, за счёт чего это работает и чем вы на самом деле платите.
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

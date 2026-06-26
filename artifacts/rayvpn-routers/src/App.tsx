@@ -11,6 +11,7 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { OrderForm } from "@/components/OrderForm";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { Security } from "@/components/Security";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ function Home() {
       <Hero />
       <Advantages />
       <ScamExposure />
+      <Security />
       <HowItWorks />
       <OrderForm />
       <Footer />

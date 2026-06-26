@@ -66,13 +66,13 @@ export function HowItWorks() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-sm font-mono">
               <a
-                href="https://cabinet.raypn.online"
+                href="https://lk.raypn.online"
                 target="_blank"
                 rel="noreferrer"
                 className="text-primary hover:underline bg-primary/10 px-4 py-2 rounded-md"
                 data-testid="link-cabinet"
               >
-                cabinet.raypn.online
+                lk.raypn.online
               </a>
               <span className="text-muted-foreground hidden sm:inline">•</span>
               <a
