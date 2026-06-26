@@ -10,12 +10,14 @@ import { ScamExposure } from "@/components/ScamExposure";
 import { HowItWorks } from "@/components/HowItWorks";
 import { OrderForm } from "@/components/OrderForm";
 import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 
 const queryClient = new QueryClient();
 
 function Home() {
   return (
     <div className="min-h-[100dvh] w-full bg-background text-foreground selection:bg-primary selection:text-primary-foreground font-sans dark">
+      <Header />
       <Hero />
       <Advantages />
       <ScamExposure />

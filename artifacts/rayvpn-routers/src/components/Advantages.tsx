@@ -17,7 +17,7 @@ export function Advantages() {
   };
 
   return (
-    <section className="py-24 md:py-32 relative border-b border-white/5 bg-background">
+    <section id="advantages" className="py-24 md:py-32 relative border-b border-white/5 bg-background scroll-mt-20">
       <div className="container px-4 mx-auto">
         <div className="max-w-3xl mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Почему мы лучше.</h2>

@@ -21,7 +21,7 @@ export function HowItWorks() {
   ];
 
   return (
-    <section className="py-24 md:py-32 border-b border-white/5 relative">
+    <section id="how-it-works" className="py-24 md:py-32 border-b border-white/5 relative scroll-mt-20">
       <div className="container px-4 mx-auto">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Как это работает</h2>

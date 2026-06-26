@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 
 export function ScamExposure() {
   return (
-    <section className="py-24 md:py-32 bg-[radial-gradient(ellipse_at_bottom,rgba(220,44,44,0.05)_0%,rgba(0,0,0,0)_60%)] border-b border-white/5">
+    <section id="comparison" className="py-24 md:py-32 bg-[radial-gradient(ellipse_at_bottom,rgba(220,44,44,0.05)_0%,rgba(0,0,0,0)_60%)] border-b border-white/5 scroll-mt-20">
       <div className="container px-4 mx-auto">
         <div className="max-w-4xl mx-auto">
           <motion.div
