@@ -12,6 +12,7 @@ import { OrderForm } from "@/components/OrderForm";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Security } from "@/components/Security";
+import { DeviceSupport } from "@/components/DeviceSupport";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ function Home() {
       <Header />
       <Hero />
       <Advantages />
+      <DeviceSupport />
       <ScamExposure />
       <Security />
       <HowItWorks />
